@@ -7,12 +7,31 @@ public class SortingUtil
         arr[j]=temp;
 
     }
+    public static boolean checkSum(int [] arr)
+    {
+        int sum = 0;
+        int sortedSum = 0;
+        for(int x = 0; x<arr.length; x++)
+        {
+            sum += arr[x];
+        }
+        SortingUtil.bubbleSort(arr);
+        for (int y = 0; y< arr.length;y++ )
+        {
+            sortedSum += arr[y];
+        }
+        if (sum == sortedSum)
+        {
+            return true;
+        }
+        return false;
+    }
 
     public static int[] bubbleSort(int[] arr)
     {
         boolean sorted= SortingUtil.isSorted(arr);
         int lastSwap = arr.length;
-        int Temp=0;
+        int temp=0;
         while(!sorted)
         {
             for(int i=0; i<lastSwap; i++)
@@ -24,9 +43,9 @@ public class SortingUtil
                         SortingUtil.swap(arr, i, i + 1);
                     }
                 }
-                Temp=i;
+                temp=i;
             }
-            lastSwap=Temp;
+            lastSwap=temp;
             sorted=SortingUtil.isSorted(arr);
 
         }
@@ -41,6 +60,7 @@ public class SortingUtil
             if(arr[i] > arr[i+1])
             {
                 result=false;
+                break; //if there is an error, it breaks the loop and returns false for it to fix. Otherwise if the last value is an error it will be true instead of false.
             }
         }
         return result;
@@ -49,7 +69,7 @@ public class SortingUtil
     public static int[] randIntArr(int count)
     {
         int[] arr = new int[count];
-        for(int i=0; i<arr.length-1; i++)
+        for(int i=0; i<arr.length; i++)
         {
             arr[i]= (int)(Math.random()*10001);
         }
