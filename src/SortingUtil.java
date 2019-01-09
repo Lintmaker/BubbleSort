@@ -51,7 +51,27 @@ public class SortingUtil
         }
         return arr;
     }
+    public static int [] selectionSort (int [] arr)
+    {
+        int minValue = 0;
+        int minPos = 0;
+        for(int curPos = 0; curPos< arr.length-1; curPos++)
+        {
+            minValue = arr[curPos];
+            minPos = curPos;
 
+            for (int i = curPos + 1; i < arr.length; i++)
+            {
+             if (minValue > arr[i])
+             {
+                 minPos = i;
+                 minValue = arr[i];
+             }
+             swap(arr,curPos, minPos);
+            }
+        }
+        return arr;
+    }
     public static boolean isSorted(int[] arr)
     {
         boolean result=true;
