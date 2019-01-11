@@ -2,7 +2,7 @@ public class BubbleSortRunner
 {
     public static void main (String [] args)
     {
-        int [] testArr = SortingUtil.randIntArr(5);
+        int [] testArr = SortingUtil.randIntArr(10);
 
         System.out.println("Before: ");
         System.out.println(SortingUtil.print(testArr));
@@ -14,6 +14,8 @@ public class BubbleSortRunner
         System.out.println("After: ");
         System.out.println(SortingUtil.print(testArr));
         System.out.println("Time taken: "+ time);
+
+        testArr = SortingUtil.randIntArr(5);
 
         System.out.println("Before: ");
         System.out.println(SortingUtil.print(testArr));

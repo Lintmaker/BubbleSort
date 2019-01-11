@@ -7,7 +7,7 @@ public class SortingUtil
         arr[j]=temp;
 
     }
-    public static void swapString(String[] arr, int i, int j)
+    public static void swapString(String[] arr, int  i, int j)
     {
         String temp=arr[i];
         arr[i]=arr[j];
@@ -85,8 +85,8 @@ public class SortingUtil
     }
     public static int [] selectionSort (int [] arr)
     {
-        int minValue = 0;
-        int minPos = 0;
+        int minValue;
+        int minPos;
         for(int curPos = 0; curPos< arr.length-1; curPos++)
         {
             minValue = arr[curPos];
