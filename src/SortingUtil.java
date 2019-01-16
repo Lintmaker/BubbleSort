@@ -61,10 +61,10 @@ public class SortingUtil
     }
     public static String[] bubbleSortString(String[] arr)
     {
-        boolean sorted= SortingUtil.isSortedString(arr);
         int lastSwap = arr.length;
         int temp=0;
-        while(!sorted)
+        int timestried = 0;
+        while(timestried != arr.length)
         {
             for(int i=0; i<lastSwap; i++)
             {
@@ -78,8 +78,7 @@ public class SortingUtil
                 temp=i;
             }
             lastSwap=temp;
-            sorted=SortingUtil.isSortedString(arr);
-
+            timestried++;
         }
         return arr;
     }
@@ -122,19 +121,6 @@ public class SortingUtil
         for(int i =0; i <arr.length-1; i++)
         {
             if(arr[i] > arr[i+1])
-            {
-                result=false;
-                break; //if there is an error, it breaks the loop and returns false for it to fix. Otherwise if the last value is an error it will be true instead of false.
-            }
-        }
-        return result;
-    }
-    public static boolean isSortedString(String[] arr)
-    {
-        boolean result=true;
-        for(int i =0; i <arr.length-1; i++)
-        {
-            if(arr[i].compareTo(arr[i+1]) == -1);
             {
                 result=false;
                 break; //if there is an error, it breaks the loop and returns false for it to fix. Otherwise if the last value is an error it will be true instead of false.
