@@ -83,24 +83,18 @@ public class SortingUtil
         }
         return arr;
     }
-    public static int [] selectionSort (int [] arr)
-    {
-        int minValue;
-        int minPos;
-        for(int curPos = 0; curPos< arr.length-1; curPos++)
+    public static int[] selectionSort(int[] arr){
+        for (int i = 0; i < arr.length - 1; i++)
         {
-            minValue = arr[curPos];
-            minPos = curPos;
-
-            for (int i = curPos + 1; i < arr.length; i++)
-            {
-             if (minValue > arr[i])
-             {
-                 minPos = i;
-                 minValue = arr[i];
-             }
-             swap(arr,curPos, minPos);
+            int index = i;
+            for (int j = i + 1; j < arr.length; j++){
+                if (arr[j] < arr[index]){
+                    index = j;//searching for lowest index
+                }
             }
+            int smallerNumber = arr[index];
+            arr[index] = arr[i];
+            arr[i] = smallerNumber;
         }
         return arr;
     }
