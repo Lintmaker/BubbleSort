@@ -70,7 +70,7 @@ public class SortingUtil
             {
                 if(i+1!=arr.length)
                 {
-                    if (arr[i].compareTo(arr[i + 1]) == -1)
+                    if (arr[i].compareTo(arr[i + 1]) > -1)
                     {
                         SortingUtil.swapString(arr, i, i + 1);
                     }
@@ -95,6 +95,23 @@ public class SortingUtil
             int smallerNumber = arr[index];
             arr[index] = arr[i];
             arr[i] = smallerNumber;
+        }
+        return arr;
+    }
+
+    public static int[] insertionSort(int arr[])
+    {
+        int n = arr.length;
+        for (int i=1; i<n; ++i)
+        {
+            int key = arr[i];
+            int j = i-1;
+            while (j>=0 && arr[j] > key)
+            {
+                arr[j+1] = arr[j];
+                j = j-1;
+            }
+            arr[j+1] = key;
         }
         return arr;
     }
