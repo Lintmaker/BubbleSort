@@ -33,21 +33,25 @@ public class BubbleSortRunner
         System.out.println("Before: ");
         System.out.println(SortingUtil.printString(testArrString));
 
+        long time2= System.nanoTime();
         SortingUtil.bubbleSortString(testArrString);
+        time2 = System.nanoTime() - time2;
 
         System.out.println("After: ");
         System.out.println(SortingUtil.printString(testArrString));
-        System.out.println("Time taken: "+ time);
+        System.out.println("Time taken: "+ time2);
 
         testArr = SortingUtil.randIntArr(10);
 
         System.out.println("Before: ");
         System.out.println(SortingUtil.print(testArr));
 
+        long time3 = System.nanoTime();
         SortingUtil.insertionSort(testArr);
+        time3 = System.nanoTime() - time3;
 
         System.out.println("After: ");
         System.out.println(SortingUtil.print(testArr));
-        System.out.println("Time taken: "+ time);
+        System.out.println("Time taken: "+ time3);
     }
 }
